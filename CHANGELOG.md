@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Fix typo in VideoStreamDescription when stream is disabled by WebRTC
+- Avoid Pixel3 encoder issues (far sites see stripped video) by ensuring encoder width is 16's multiples
 
 ## [1.11.0] - 2020-06-30
 
