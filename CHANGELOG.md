@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.13.0] - 2020-07-21
 
 ### Added
+- Add content share video test integration test
 
 ### Changed
 - Use POST instead of GET for TURN control endpoint

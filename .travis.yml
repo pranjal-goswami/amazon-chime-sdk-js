@@ -17,6 +17,13 @@ jobs:
       script: npm run build:release
       addons: skip
     #Integration tests
+    - stage: integ_content_share
+      if: (type = pull_request) OR (type = push AND branch != master)
+      before_install: script/needs-integration-test || travis_terminate 0
+      install:
+        - source script/travis-awscli-installation
+        - integration/js/script/install-kite
+      script: npm run test:integration-content-share
     - stage: integ_audio
       if: (type = pull_request) OR (type = push AND branch != master)
       before_install: script/needs-integration-test || travis_terminate 0
@@ -45,13 +52,6 @@ jobs:
         - source script/travis-awscli-installation
         - integration/js/script/install-kite
       script: npm run test:integration-screen-share
-    - stage: integ_content_share
-      if: (type = pull_request) OR (type = push AND branch != master)
-      before_install: script/needs-integration-test || travis_terminate 0
-      install:
-        - source script/travis-awscli-installation
-        - integration/js/script/install-kite
-      script: npm run test:integration-content-share
     - stage: integ_data_message
       if: (type = pull_request) OR (type = push AND branch != master)
       before_install: script/needs-integration-test || travis_terminate 0

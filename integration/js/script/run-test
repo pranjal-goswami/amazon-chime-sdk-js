@@ -79,6 +79,7 @@ case $1 in
       r app_quit_screen_share_test.config.json
       ;;
    content_share)
+      r content_share_video_test.config.json
       r content_share_screen_capture_test.config.json
       r content_share_only_allow_two_test.config.json
       r content_share_join_later_test.config.json
